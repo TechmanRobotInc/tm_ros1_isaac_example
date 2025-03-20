@@ -52,5 +52,5 @@ Install the driver according to the **TMflow** version of your TM Robot. For exa
    ./run_demo_virtual.sh
    ```
 Now, you can control the **TM Robot** using **Moveit** and synchronize its pose to **Isaac Sim**.
-![TM5S Isaac Sim Demo](images/tm5s_demo.png)
+![TM5S Isaac Sim Demo](doc/images/tm5s_demo.png)
 
