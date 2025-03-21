@@ -1,8 +1,8 @@
 # Overview
 
-This repository provides an example of synchronizing a **TM Robot** with **Isaac Sim**. Users can control the TM Robot externally via **Moveit** using the **TM ROS Driver** and synchronize its pose to Isaac Sim.
+This repository provides an example of synchronizing a **TM Robot** with **Isaac Sim**. Users can control the TM Robot externally via **Moveit** using the **TM ROS Driver** and synchronize its pose to Isaac Sim. Additionally, users can build their own simulation environment based on their specific needs. The provided robot USD serves as a component that can be imported for use.
 
-## System Requirements
+## Requirements
 
 - **TM ROS Driver (Noetic)**
 - **Isaac Sim 4.2.0**
@@ -13,7 +13,7 @@ Install the driver according to the **TMflow** version of your TM Robot. For exa
 
 [https://github.com/TechmanRobotInc/tm2_ros1](https://github.com/TechmanRobotInc/tm2_ros1)
 
-- Installation steps:  
+- Installation:  
   [TM ROS Driver Installation Guide](https://github.com/TechmanRobotInc/tm2_ros1?tab=readme-ov-file#3-tm-ros-driver-usage-and-installation)
 
 - For driver usage and controlling the robot with Moveit, refer to:  
@@ -21,14 +21,16 @@ Install the driver according to the **TMflow** version of your TM Robot. For exa
 
 ### Installing Nvidia Isaac Sim
 
-1. Install **Isaac Sim 4.2.0** according to Nvidia's official hardware requirements and setup guide:
+1. Install **Isaac Sim 4.2.0** according to Nvidia's official hardware requirements and download:
    - [System Requirements](https://docs.isaacsim.omniverse.nvidia.com/4.2.0/installation/requirements.html)
-   - [Installation Guide](https://docs.isaacsim.omniverse.nvidia.com/4.2.0/installation/install_workstation.html)
+   - ~~[Installation Guide](https://docs.isaacsim.omniverse.nvidia.com/4.2.0/installation/install_workstation.html)~~ (Omniverse Launcher will be deprecated and will no longer be available starting October 1, 2025.)
+   - [download](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/download.html#download-isaac-sim-short)
 
-   If installed via **Omniverse Launcher**, the default **Isaac Sim** path is usually:
+   If installed via **Omniverse Launcher**, the default installation path is usually:
    ```bash
    ~/.local/share/ov/pkg/isaac-sim-4.2.0
    ```
+
 
 2. Navigate to your **Isaac Sim** folder and install `rospkg` in the Python environment:
    ```bash
@@ -36,7 +38,7 @@ Install the driver according to the **TMflow** version of your TM Robot. For exa
    ./python.sh -m pip install rospkg
    ```
 
-## Getting Started
+## Quick Start
 
 ### Real Robot
 1. Modify `tmros_setup.sh` to set the correct **TM ROS Driver** path and **Robot IP**.
