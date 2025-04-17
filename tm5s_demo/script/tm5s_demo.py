@@ -18,6 +18,7 @@ def callback_pos(data): # ros subscriber callback
 
 def ros_shutdown():
     print("ros shutdown")
+    simulation_app.close()
 
 if __name__ == "__main__":
 
@@ -48,6 +49,7 @@ if __name__ == "__main__":
     action = ArticulationAction() # action that is used to get data from /joint_states
 
     rospy.init_node("listener")
+    rospy.on_shutdown(ros_shutdown)
     rospy.Subscriber("/joint_states", JointState, callback_pos) # ros subscriber to get joint_states value from tmr_driver/moveit
 
     my_world.reset() # reset world scene
@@ -61,7 +63,5 @@ if __name__ == "__main__":
                 my_world.reset()
             
             articulation_controller.apply_action(action) # move the robot
-
-    rospy.on_shutdown(ros_shutdown)
 
     simulation_app.close()
